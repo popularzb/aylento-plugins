@@ -6,7 +6,7 @@ One MCP client, host-specific packaging. Package validation, MCP protocol checks
 | --- | --- | --- | --- |
 | Codex local | Plugin + skill + catalog; optional TOML generator | `.agents/plugins/marketplace.json`; manual output merges into Codex config | Native catalog/install tested in isolated Codex home; current real account left intact |
 | Claude Code | Dedicated plugin + skill + marketplace | `.claude-plugin/marketplace.json` → `claude/aylento` | Manifest validated using installed CLI; real model messaging still to be tested |
-| Gemini CLI | Root extension manifest, context and bundled runtime | `gemini extensions install .` | Artifact/config tested; this release's real model messaging still to be tested |
+| Gemini CLI | Root extension manifest, context and bundled runtime | `gemini extensions install https://github.com/popularzb/aylento-plugins --ref=main` | Gemini CLI 0.61.0 installed from public Git; host MCP connection and isolated 36-tool check passed on macOS; real model messaging still to be tested |
 | Cursor | Configuration generator | `.cursor/mcp.json` or user MCP settings | JSON and stdio checked; real host acceptance pending |
 | VS Code Copilot | `servers` configuration generator | `.vscode/mcp.json` or MCP: Open User Configuration | JSON and stdio checked; Agent mode/model acceptance pending |
 | Claude Desktop | Local MCP configuration generator | Desktop developer settings / `claude_desktop_config.json` | External Node 24.15+ required; not a signed MCPB desktop extension |

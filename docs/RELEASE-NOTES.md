@@ -4,6 +4,7 @@
 
 - Add GitHub Actions validation and version-tag release packaging.
 - Prepare a self-contained npm package and official MCP Registry metadata.
+- Add direct Gemini CLI Git installation/update instructions and correct outdated review-only license wording.
 - Keep AYLENTO Client Use License v1.0 and bundled third-party notices.
 - Preserve authorization, profile and local history during upgrades.
 

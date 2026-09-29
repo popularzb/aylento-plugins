@@ -84,8 +84,8 @@
     },
     {
       "path": "docs/RELEASE-NOTES.md",
-      "bytes": 921,
-      "sha256": "733d042a49610cab7be467faad7232c29c5d598a47665d662dbaf1f7b2c3bb48"
+      "bytes": 1032,
+      "sha256": "435e32631a5d0959465c33e7a5600a7b734fe538d886946334291a70489c8576"
     },
     {
       "path": "gemini-extension.json",
@@ -94,13 +94,13 @@
     },
     {
       "path": "GEMINI.md",
-      "bytes": 5422,
-      "sha256": "c09a75df2363a6a71c641c45848737ec6e71e80e3fda8b9edf8d84acc91aae94"
+      "bytes": 5545,
+      "sha256": "b1d094b5403aa3ad2846ceff2261b37e149b50258886d21e5bc279288f4086e9"
     },
     {
       "path": "HOSTS.md",
-      "bytes": 4088,
-      "sha256": "35f63791cd06a8c00697d582c8a56b5cf916be83d2ef7a4ff5c3f3b2bc643998"
+      "bytes": 4212,
+      "sha256": "bb081d9bf2bcfdf0fc39286e17c343fe3f1a8b673756994fef42c49a2d512df4"
     },
     {
       "path": "LICENSE.txt",
@@ -159,8 +159,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7662,
-      "sha256": "b7069d4c2ace234956d268d225a50cff5742fa8bc7e11e2f0df23be38bdde978"
+      "bytes": 8004,
+      "sha256": "6f76106c825a34e95089ace9c1bf4e8e43961530c2bbf2159b05195741e604d2"
     },
     {
       "path": "RELEASE-STATUS.json",
@@ -219,8 +219,8 @@
     },
     {
       "path": "安装指南.md",
-      "bytes": 3560,
-      "sha256": "5c9c481340d8f4de92a52889280d12182c749c7a73d26f03ac342cef1b95cec8"
+      "bytes": 4017,
+      "sha256": "1ad86b6c8e84baa47c8acbc95f96672f1ad96caf695e89a2ad752a85ede105a0"
     }
   ],
   "excluded": [

@@ -38,11 +38,13 @@ Restart or reload the host as prompted. The Claude package has its own `.claude-
 
 ### Gemini CLI
 
-From the extracted repository root:
+Install directly from the official public repository (Node.js 24.15.0+ and Git required):
 
 ```sh
-gemini extensions install .
+gemini extensions install https://github.com/popularzb/aylento-plugins --ref=main
 ```
+
+To update, run `gemini extensions update aylento` and restart Gemini CLI. To opt into host-managed automatic updates, add `--auto-update` when installing. For an extracted local copy, run `gemini extensions install .` from its root.
 
 `gemini-extension.json` is at the repository root. The extension uses the `gemini` profile. Review the installation prompt; this does not bypass the host's tool permissions.
 
