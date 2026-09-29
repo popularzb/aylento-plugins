@@ -10,7 +10,7 @@ One MCP client, host-specific packaging. Package validation, MCP protocol checks
 | Cursor | Configuration generator | `.cursor/mcp.json` or user MCP settings | JSON and stdio checked; real host acceptance pending |
 | VS Code Copilot | `servers` configuration generator | `.vscode/mcp.json` or MCP: Open User Configuration | JSON and stdio checked; Agent mode/model acceptance pending |
 | Claude Desktop | Local MCP configuration generator | Desktop developer settings / `claude_desktop_config.json` | External Node 24.15+ required; not a signed MCPB desktop extension |
-| WorkBuddy | Local stdio configuration generator + skill | Custom connector MCP settings | Manual route; not a submitted or approved marketplace connector |
+| WorkBuddy | Dedicated MCP + Skill connector package; optional manual config | `workbuddy/aylento` / `aylento-workbuddy` release ZIP; WorkBuddy 5.0+ managed Node and a version-pinned GitHub tarball | Isolated launcher and 36-tool checks run in release validation; real WorkBuddy installation, pairing/model messaging and marketplace review remain pending |
 | Cherry Studio | Local MCP configuration generator | MCP settings | Manual route; host/model acceptance pending |
 | Other local MCP clients | Generic configuration generator | Host-specific | Host must support stdio, process launch and tool approval |
 

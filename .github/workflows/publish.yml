@@ -28,6 +28,7 @@ jobs:
           node scripts/prepare-release.mjs "$RUNNER_TEMP/aylento-verify"
           node "$RUNNER_TEMP/aylento-verify/npm/scripts/verify-package.mjs"
           node "$RUNNER_TEMP/aylento-verify/npm/scripts/smoke.mjs"
+          node scripts/smoke.mjs --workbuddy "$RUNNER_TEMP/aylento-verify/aylento-client-$(node -p 'require("./package.json").version').tgz"
   publish:
     if: github.repository == 'popularzb/aylento-plugins' && startsWith(github.ref, 'refs/tags/v')
     needs: validate

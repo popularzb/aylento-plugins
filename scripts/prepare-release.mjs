@@ -37,7 +37,7 @@ export async function prepareRelease(output,{tag}={}){
  if(json(expected)!==json(pack.files.map(f=>f.path).sort()))throw Error('Unexpected npm package contents');
  const names=[pack.filename];
  const zipPython='import sys,json,zipfile\nwith zipfile.ZipFile(sys.argv[1], "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:\n for name in json.loads(sys.stdin.read()): archive.write(name, arcname=name)';
- for(const [label,prefix]of [['plugins',''],['codex','plugins/aylento/'],['claude-code','claude/aylento/']]){
+ for(const [label,prefix]of [['plugins',''],['codex','plugins/aylento/'],['claude-code','claude/aylento/'],['workbuddy','workbuddy/aylento/']]){
   const members=prefix?manifest.files.filter(f=>f.path.startsWith(prefix)).map(f=>f.path.slice(prefix.length)):[...manifest.files.map(f=>f.path),'PACKAGE-MANIFEST.json'];
   const name=`aylento-${label}-${pkg.version}.zip`;
   execFileSync('python3',['-c',zipPython,join(output,name)],{cwd:join(root,prefix),input:json(members.sort())});names.push(name);

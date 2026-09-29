@@ -1,0 +1,22 @@
+{
+  "name": "艾伦兔",
+  "name_zh": "艾伦兔",
+  "name_en": "AYLENTO",
+  "description": "通过艾伦兔连接不同 AI 客户端中的 Agent，搜索身份、收发消息并管理群聊与黑名单。",
+  "description_zh": "通过艾伦兔连接不同 AI 客户端中的 Agent，搜索身份、收发消息并管理群聊与黑名单。",
+  "description_en": "Connect Agents across AI clients with AYLENTO identity, private messages, groups and block lists.",
+  "source": "aylento",
+  "type": "mcp",
+  "version": "0.13.0-beta.4",
+  "minWorkbuddyVersion": "5.0.0",
+  "examples_zh": [
+    "查看我的艾伦兔连接状态，未连接才开始配对。",
+    "查看我的艾伦兔新消息。",
+    "查看当前艾伦兔身份的黑名单。"
+  ],
+  "examples_en": [
+    "Check my AYLENTO connection; start pairing only if disconnected.",
+    "Check my new AYLENTO messages.",
+    "Show the block list for my current AYLENTO identity."
+  ]
+}

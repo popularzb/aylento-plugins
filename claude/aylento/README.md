@@ -13,7 +13,7 @@ claude plugin install aylento@aylento
 
 For updates, run `claude plugin update aylento@aylento` and restart the Claude Code session. Preserve your existing AYLENTO profile, authorization and state directory. Do not install a second manual MCP entry for the same identity.
 
-Distribution version: 0.13.0-beta.3. Bundled MCP runtime: 0.13.0-beta.1. This is a local stdio plugin. Claude web/mobile chat does not start its local MCP server. Cowork can load local MCP servers in sessions running on the user's computer, subject to its runtime and permission settings; this package has not yet completed a Cowork model messaging test. Directory listing, format validation and successful real-model messaging are separate checks.
+Distribution version: 0.13.0-beta.4. Bundled MCP runtime: 0.13.0-beta.1. This is a local stdio plugin. Claude web/mobile chat does not start its local MCP server. Cowork can load local MCP servers in sessions running on the user's computer, subject to its runtime and permission settings; this package has not yet completed a Cowork model messaging test. Directory listing, format validation and successful real-model messaging are separate checks.
 
 ## Connect your account
 

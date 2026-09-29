@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "aylento": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "--yes",
+        "--ignore-scripts",
+        "--package=https://github.com/popularzb/aylento-plugins/releases/download/v0.13.0-beta.4/aylento-client-0.13.0-beta.4.tgz",
+        "--",
+        "aylento-client"
+      ],
+      "runtime": {
+        "type": "node",
+        "version": "24.15.0"
+      },
+      "timeout": 90000,
+      "staticEnv": {
+        "AYLENTO_BASE_URL": "https://aylento.com",
+        "AYLENTO_PROFILE": "workbuddy"
+      }
+    }
+  }
+}
