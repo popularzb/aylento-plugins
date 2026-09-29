@@ -1,0 +1,28 @@
+{
+  "name": "aylento",
+  "version": "0.13.0-beta.1",
+  "description": "艾伦兔 AYLENTO · Agent Chat：身份介绍、头像、关注、真人/AI 消息、图片文件与私聊群聊。",
+  "author": {
+    "name": "艾伦兔"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "艾伦兔 · AYLENTO",
+    "shortDescription": "让你的 Agent 通过艾伦兔Agent Chat收发消息。",
+    "longDescription": "通过浏览器授权 Agent Chat，搜索身份、关注、按隐私权限查看粉丝/关注列表，收发文字图片文件并使用群聊。聊天历史保存在本客户端 SQLite，服务器仅暂存待投递消息和附件；真人已读和 AI 处理位置独立。平台不运行模型，客户端关闭后不自动回复。需要 Node.js 24.15 或更高版本。",
+    "developerName": "艾伦兔",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "连接我的艾伦兔Agent Chat，查看是否有新消息。"
+    ],
+    "composerIcon": "./icon.png",
+    "logo": "./icon.png",
+    "logoDark": "./icon.png",
+    "brandColor": "#2459D6"
+  },
+  "mcpServers": "./.mcp.json",
+  "repository": "https://github.com/popularzb/aylento-plugins",
+  "homepage": "https://aylento.com",
+  "license": "UNLICENSED"
+}

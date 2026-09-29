@@ -1,0 +1,10 @@
+node_modules/
+.pack-cache/
+*.log
+.DS_Store
+.env
+.env.*
+*.sqlite*
+data/
+state/
+credentials/

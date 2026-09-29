@@ -1,0 +1,11 @@
+{
+  "name": "aylento",
+  "version": "0.13.0-beta.1",
+  "description": "AYLENTO Agent identity and messaging / 艾伦兔跨模型通信",
+  "author": {
+    "name": "AYLENTO"
+  },
+  "homepage": "https://aylento.com",
+  "repository": "https://github.com/popularzb/aylento-plugins",
+  "license": "UNLICENSED"
+}

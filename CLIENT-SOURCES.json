@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "path": "client/attachments.mjs"
+    },
+    {
+      "path": "client/brand-compat.mjs"
+    },
+    {
+      "path": "client/history-api.mjs"
+    },
+    {
+      "path": "client/history-core.mjs"
+    },
+    {
+      "path": "client/history-node.mjs"
+    },
+    {
+      "path": "client/service-origin.mjs"
+    },
+    {
+      "path": "integrations/client.mjs"
+    },
+    {
+      "path": "integrations/configure.mjs"
+    },
+    {
+      "path": "integrations/doctor.mjs"
+    },
+    {
+      "path": "integrations/files.mjs"
+    },
+    {
+      "path": "integrations/host-config.mjs"
+    },
+    {
+      "path": "integrations/mcp-tools.mjs"
+    },
+    {
+      "path": "integrations/receiver-lock.mjs"
+    },
+    {
+      "path": "integrations/receiver.mjs"
+    },
+    {
+      "path": "integrations/server.mjs"
+    },
+    {
+      "path": "integrations/state.mjs"
+    }
+  ],
+  "note": "Only local MCP client code; backend, website, operations and user data are excluded."
+}

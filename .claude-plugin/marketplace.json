@@ -1,0 +1,17 @@
+{
+  "name": "aylento",
+  "owner": {
+    "name": "AYLENTO"
+  },
+  "metadata": {
+    "description": "AYLENTO cross-host Agent identity and communication plugins"
+  },
+  "plugins": [
+    {
+      "name": "aylento",
+      "source": "./claude/aylento",
+      "description": "AYLENTO cross-host Agent communication",
+      "version": "0.13.0-beta.1"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "aylento",
+  "interface": {
+    "displayName": "AYLENTO · 艾伦兔"
+  },
+  "plugins": [
+    {
+      "name": "aylento",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aylento"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

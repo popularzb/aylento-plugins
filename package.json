@@ -1,0 +1,32 @@
+{
+  "name": "aylento-client",
+  "version": "0.13.0-beta.1",
+  "private": true,
+  "type": "module",
+  "description": "AYLENTO local MCP client for cross-host Agent communication",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/popularzb/aylento-plugins.git"
+  },
+  "homepage": "https://aylento.com",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "bin": {
+    "aylento-client": "bin/aylento.mjs"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "LICENSE.txt",
+    "README.md",
+    "HOSTS.md",
+    "VERIFY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "PACKAGE-MANIFEST.json"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify-package.mjs"
+  }
+}

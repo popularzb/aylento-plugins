@@ -1,0 +1,201 @@
+{
+  "version": "0.13.0-beta.1",
+  "license": "UNLICENSED",
+  "files": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "bytes": 371,
+      "sha256": "537071ea6741d06358229e2901ec5d3990a55748b05fddf108ba8c682c26ba60"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "bytes": 355,
+      "sha256": "8de726e3ff375540d01ea0033d5f0334a01182d1cbbe6f9753963a12eb7d7156"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 91,
+      "sha256": "799eb343e2e287b234c4c0748a3bc08ee696809fabdca502168154b37652a5bf"
+    },
+    {
+      "path": "bin/aylento.mjs",
+      "bytes": 634,
+      "sha256": "f6b06612f2cc165bf1e34b5a6b2c80034bf25cd436875d9e859d5ceeef280e04"
+    },
+    {
+      "path": "claude/aylento/.claude-plugin/plugin.json",
+      "bytes": 307,
+      "sha256": "1762df570346313fcf086f8ca913149959a9f749c8400ed26e17d49f938277f4"
+    },
+    {
+      "path": "claude/aylento/.mcp.json",
+      "bytes": 265,
+      "sha256": "a1886dd143cadded6ad1bca373f6cd5d355ccaf0f9742c05237a12e269a80e3b"
+    },
+    {
+      "path": "claude/aylento/LICENSE.txt",
+      "bytes": 284,
+      "sha256": "abe846ae92b064f4f6e9829dfb74fd652914c5ec777ae1fb36c229a6f0a8b2c1"
+    },
+    {
+      "path": "claude/aylento/README.md",
+      "bytes": 722,
+      "sha256": "d0b92689fb974cf552ee3dc3d57bfc31833741f857621eae4087c5601a27c756"
+    },
+    {
+      "path": "claude/aylento/scripts/doctor.mjs",
+      "bytes": 633927,
+      "sha256": "80716f7f37d599d919d0fed3e142e78a19190b24fcdfab1ea7b83a31a1bc3635"
+    },
+    {
+      "path": "claude/aylento/scripts/server.mjs",
+      "bytes": 1452717,
+      "sha256": "022716b1482509213085ed432b7da6f17d30ace2aae39ca5ea81ae330fe35b84"
+    },
+    {
+      "path": "claude/aylento/skills/aylento/SKILL.md",
+      "bytes": 7459,
+      "sha256": "ee46c925014b2ab055109cd2cb9d086f623427a23af7bdf7e8c8b5fc12753705"
+    },
+    {
+      "path": "claude/aylento/THIRD_PARTY_NOTICES.md",
+      "bytes": 15549,
+      "sha256": "bc215a0bf7d21e8ad7e901014a606a7d14384015399eda136b8a1cd8e6102cac"
+    },
+    {
+      "path": "CLIENT-SOURCES.json",
+      "bytes": 984,
+      "sha256": "d5f47b9f8bcf245d151dbc5912fb3f61c00a72507e87fadc7146c2b58c9f510f"
+    },
+    {
+      "path": "gemini-extension.json",
+      "bytes": 477,
+      "sha256": "7a566a3ac101dad83c1a9dec15ddab1cb0f522691cb1440ffae2ed9f9590ee0e"
+    },
+    {
+      "path": "GEMINI.md",
+      "bytes": 5422,
+      "sha256": "c09a75df2363a6a71c641c45848737ec6e71e80e3fda8b9edf8d84acc91aae94"
+    },
+    {
+      "path": "HOSTS.md",
+      "bytes": 4088,
+      "sha256": "35f63791cd06a8c00697d582c8a56b5cf916be83d2ef7a4ff5c3f3b2bc643998"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 284,
+      "sha256": "abe846ae92b064f4f6e9829dfb74fd652914c5ec777ae1fb36c229a6f0a8b2c1"
+    },
+    {
+      "path": "package.json",
+      "bytes": 687,
+      "sha256": "def5347f0b57ed383d25202ad35bd8f26e0e5eb7fd22aebdfcfca163eb173691"
+    },
+    {
+      "path": "plugins/aylento/.codex-plugin/plugin.json",
+      "bytes": 1273,
+      "sha256": "a2be89e1b36611d4afa6619c98c5b8cb30cfd8646f5f920b1f4ea2bd5e21056d"
+    },
+    {
+      "path": "plugins/aylento/.mcp.json",
+      "bytes": 259,
+      "sha256": "0c7e47ddf7cfa96f042e4304bff87881411b318b0b43c5f0ab22cbdb3e6453c7"
+    },
+    {
+      "path": "plugins/aylento/icon.png",
+      "bytes": 901349,
+      "sha256": "29c436cebd9c85a69add12ae8fb4263afbe78ba9983d0bfa3fc46a5ebfdf6370"
+    },
+    {
+      "path": "plugins/aylento/LICENSE.txt",
+      "bytes": 284,
+      "sha256": "abe846ae92b064f4f6e9829dfb74fd652914c5ec777ae1fb36c229a6f0a8b2c1"
+    },
+    {
+      "path": "plugins/aylento/README.md",
+      "bytes": 716,
+      "sha256": "81980830e3e051cee74450428614ce4b7103a3ddabf2b54a3681113f05b227a1"
+    },
+    {
+      "path": "plugins/aylento/scripts/doctor.mjs",
+      "bytes": 633927,
+      "sha256": "80716f7f37d599d919d0fed3e142e78a19190b24fcdfab1ea7b83a31a1bc3635"
+    },
+    {
+      "path": "plugins/aylento/scripts/server.mjs",
+      "bytes": 1452717,
+      "sha256": "022716b1482509213085ed432b7da6f17d30ace2aae39ca5ea81ae330fe35b84"
+    },
+    {
+      "path": "plugins/aylento/skills/aylento/SKILL.md",
+      "bytes": 7459,
+      "sha256": "ee46c925014b2ab055109cd2cb9d086f623427a23af7bdf7e8c8b5fc12753705"
+    },
+    {
+      "path": "plugins/aylento/THIRD_PARTY_NOTICES.md",
+      "bytes": 15549,
+      "sha256": "bc215a0bf7d21e8ad7e901014a606a7d14384015399eda136b8a1cd8e6102cac"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6586,
+      "sha256": "30cee425db9125dca117f3d332728a653d4e03c7b6ef3df5a3435b67ea182889"
+    },
+    {
+      "path": "RELEASE-STATUS.json",
+      "bytes": 360,
+      "sha256": "3275325ea6c9bfd20d4d5f3ba6dbb30703199b253385a718d57c98e4d7b0b8d8"
+    },
+    {
+      "path": "scripts/configure.mjs",
+      "bytes": 6537,
+      "sha256": "d9b1035fc8615e4f4623b4947f59d1d4312382e6f4851c8d9b4dfecb925329f6"
+    },
+    {
+      "path": "scripts/doctor.mjs",
+      "bytes": 633927,
+      "sha256": "80716f7f37d599d919d0fed3e142e78a19190b24fcdfab1ea7b83a31a1bc3635"
+    },
+    {
+      "path": "scripts/server.mjs",
+      "bytes": 1452717,
+      "sha256": "022716b1482509213085ed432b7da6f17d30ace2aae39ca5ea81ae330fe35b84"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "bytes": 3028,
+      "sha256": "a1600f42dbf496e946d62b8b2741d19f9cf04fceab39952ff6186e068643449c"
+    },
+    {
+      "path": "scripts/verify-package.mjs",
+      "bytes": 1586,
+      "sha256": "930ca5c634a4b6942dc4a0d15943893894f25bf4d0c475e22d6f952ac2f92270"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 15549,
+      "sha256": "bc215a0bf7d21e8ad7e901014a606a7d14384015399eda136b8a1cd8e6102cac"
+    },
+    {
+      "path": "VERIFY.md",
+      "bytes": 1585,
+      "sha256": "e54e76e06614270eafa8153c583f666663c55203e8ceb03f8fd9dab83daae054"
+    },
+    {
+      "path": "安装指南.md",
+      "bytes": 3237,
+      "sha256": "58d8d366a849ef6c01b01f3d2d77b38a3354f5d7eb3fff5a3ab6d09daec44c97"
+    }
+  ],
+  "excluded": [
+    "backend",
+    "live",
+    "deploy",
+    "ops",
+    "credentials",
+    "data",
+    "histories",
+    "private repository history"
+  ]
+}

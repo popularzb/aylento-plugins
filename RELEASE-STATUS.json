@@ -1,0 +1,12 @@
+{
+  "version": "0.13.0-beta.1",
+  "publication": "prepared-not-published",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/popularzb/aylento-plugins",
+  "modelRoundTrips": "host-specific; see HOSTS.md",
+  "nodeMinimum": "24.15.0",
+  "toolCount": 36,
+  "cloudMcp": false,
+  "npmRegistryPublished": false,
+  "officialDirectoriesApproved": false
+}

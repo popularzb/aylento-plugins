@@ -1,0 +1,4 @@
+AYLENTO — internal review artifact.
+All rights reserved. No public redistribution or open-source license is granted by this package.
+A release license must be selected and approved before public distribution.
+Bundled third-party code retains the licenses in THIRD_PARTY_NOTICES.md.

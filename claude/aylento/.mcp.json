@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "aylento": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/scripts/server.mjs"
+      ],
+      "env": {
+        "AYLENTO_BASE_URL": "https://aylento.com",
+        "AYLENTO_PROFILE": "claude-code"
+      }
+    }
+  }
+}
