@@ -1,0 +1,84 @@
+name: Validate and release AYLENTO clients
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: aylento-release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.15.0'
+      - name: Verify client files and isolated MCP protocol
+        run: |
+          node scripts/verify-package.mjs
+          node scripts/smoke.mjs
+      - name: Prepare and check install package
+        run: |
+          node scripts/prepare-release.mjs "$RUNNER_TEMP/aylento-verify"
+          node "$RUNNER_TEMP/aylento-verify/npm/scripts/verify-package.mjs"
+          node "$RUNNER_TEMP/aylento-verify/npm/scripts/smoke.mjs"
+  publish:
+    if: github.repository == 'popularzb/aylento-plugins' && startsWith(github.ref, 'refs/tags/v')
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.15.0'
+      - name: Prepare tagged release
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: node scripts/prepare-release.mjs "$RUNNER_TEMP/aylento-release" "$RELEASE_TAG"
+      - name: Publish npm using its configured trusted publisher
+        if: vars.NPM_TRUSTED_PUBLISHING == 'enabled'
+        run: node scripts/publish-npm.mjs "$RUNNER_TEMP/aylento-release"
+      - name: Publish MCP Registry using GitHub OIDC
+        if: vars.NPM_TRUSTED_PUBLISHING == 'enabled' && vars.MCP_REGISTRY_PUBLISH == 'enabled'
+        run: |
+          curl --fail --location --output "$RUNNER_TEMP/mcp-publisher.tar.gz" https://github.com/modelcontextprotocol/registry/releases/download/v1.8.1/mcp-publisher_linux_amd64.tar.gz
+          printf '%s  %s\n' a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc "$RUNNER_TEMP/mcp-publisher.tar.gz" | sha256sum --check -
+          mkdir "$RUNNER_TEMP/mcp-publisher"
+          tar -xzf "$RUNNER_TEMP/mcp-publisher.tar.gz" -C "$RUNNER_TEMP/mcp-publisher"
+          "$RUNNER_TEMP/mcp-publisher/mcp-publisher" login github-oidc
+          "$RUNNER_TEMP/mcp-publisher/mcp-publisher" publish --file server.json
+      - name: Publish GitHub download packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'A release already exists; refusing to replace published assets.' >&2
+            exit 1
+          fi
+          if [[ "$RELEASE_TAG" == *-* ]]; then
+            release_flags=(--prerelease)
+          else
+            release_flags=(--latest)
+          fi
+          gh release create "$RELEASE_TAG" "$RUNNER_TEMP/aylento-release/"*.zip "$RUNNER_TEMP/aylento-release/"*.tgz "$RUNNER_TEMP/aylento-release/SHA256SUMS" --repo "$GITHUB_REPOSITORY" --verify-tag --title "AYLENTO $RELEASE_TAG" --notes-file "$RUNNER_TEMP/aylento-release/RELEASE-NOTES.md" "${release_flags[@]}"
+      - name: Report configured publication channels
+        env:
+          NPM_ENABLED: ${{ vars.NPM_TRUSTED_PUBLISHING }}
+          MCP_ENABLED: ${{ vars.MCP_REGISTRY_PUBLISH }}
+        run: |
+          echo "GitHub download release published." >> "$GITHUB_STEP_SUMMARY"
+          echo "npm trusted publishing enabled: ${NPM_ENABLED:-not configured}" >> "$GITHUB_STEP_SUMMARY"
+          echo "MCP Registry publishing enabled: ${MCP_ENABLED:-not configured}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Marketplace review and end-user updates are separate processes." >> "$GITHUB_STEP_SUMMARY"

@@ -1,10 +1,12 @@
 // Offline protocol check: no existing credentials, pairing, messages or service calls.
 import {spawn} from 'node:child_process';
-import {mkdtemp,rm} from 'node:fs/promises';
+import {mkdtemp,rm,readFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {once} from 'node:events';
+const expectedRuntime=JSON.parse(await readFile(new URL('../package.json',import.meta.url))).aylentoRuntimeVersion;
+if(!expectedRuntime)throw Error('Missing runtime version metadata');
 const directory=await mkdtemp(join(tmpdir(),'aylento-isolated-check-'));
 const env={AYLENTO_STATE_DIR:directory,AYLENTO_PROFILE:'package-check',AYLENTO_BASE_URL:'https://aylento.com'};
 for(const key of ['PATH','SYSTEMROOT','WINDIR','TEMP','TMP','USERPROFILE','HOME'])if(process.env[key])env[key]=process.env[key];
@@ -28,7 +30,7 @@ child.stdout.on('data',chunk=>{
 function request(method,params){return new Promise((resolve,reject)=>{const n=++id;const timer=setTimeout(()=>{waiting.delete(n);reject(Error('MCP timeout'));},15000);waiting.set(n,{resolve,reject,timer});child.stdin.write(JSON.stringify({jsonrpc:'2.0',id:n,method,params})+'\n');});}
 try{
  const init=await request('initialize',{protocolVersion:'2025-11-25',capabilities:{},clientInfo:{name:'aylento-offline-release-check',version:'1'}});
- if(init.serverInfo?.name!=='AYLENTO'||init.serverInfo.version!=='0.13.0-beta.1')throw Error('Wrong server identity/version');
+ if(init.serverInfo?.name!=='AYLENTO'||init.serverInfo.version!==expectedRuntime)throw Error('Wrong server identity/version');
  child.stdin.write(JSON.stringify({jsonrpc:'2.0',method:'notifications/initialized'})+'\n');
  const tools=await request('tools/list',{});
  if(tools.tools?.length!==36||tools.nextCursor||!tools.tools.some(t=>t.name==='aylento_list_blocked'))throw Error('Incomplete tool inventory');

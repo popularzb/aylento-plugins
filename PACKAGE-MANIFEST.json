@@ -1,5 +1,5 @@
 {
-  "version": "0.13.0-beta.1",
+  "version": "0.13.0-beta.2",
   "license": "PROPRIETARY",
   "files": [
     {
@@ -10,7 +10,12 @@
     {
       "path": ".claude-plugin/marketplace.json",
       "bytes": 355,
-      "sha256": "8de726e3ff375540d01ea0033d5f0334a01182d1cbbe6f9753963a12eb7d7156"
+      "sha256": "176c1441b7d02c5dad301d4010766cfdf07221f153a319d3ddbb31a2217d710a"
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "bytes": 4026,
+      "sha256": "97dee3e3324d1b4ad52bb7a077ba0ce2d1aef7c04f7c4c8b88ddf8c11c8f2da1"
     },
     {
       "path": ".gitignore",
@@ -25,7 +30,7 @@
     {
       "path": "claude/aylento/.claude-plugin/plugin.json",
       "bytes": 323,
-      "sha256": "2afdec52cd513c293fa343d7267ee201dff83249a5401b13e39c704ee1054c75"
+      "sha256": "55ce840dfcdf7e6bfe2ba29807a6cc33d51e4b6e97e778f467138eebd2ba745f"
     },
     {
       "path": "claude/aylento/.mcp.json",
@@ -40,7 +45,7 @@
     {
       "path": "claude/aylento/README.md",
       "bytes": 722,
-      "sha256": "d0b92689fb974cf552ee3dc3d57bfc31833741f857621eae4087c5601a27c756"
+      "sha256": "32a092831bd3fbba5101a3ea847642b537635ab9bc1c78a2c50d1f6a0c95735f"
     },
     {
       "path": "claude/aylento/scripts/doctor.mjs",
@@ -68,9 +73,24 @@
       "sha256": "d5f47b9f8bcf245d151dbc5912fb3f61c00a72507e87fadc7146c2b58c9f510f"
     },
     {
+      "path": "docs/NPM-README.md",
+      "bytes": 2635,
+      "sha256": "53e2e3a60a50e12b937c3c61dddb8a0fb189b4f24191091ee1d87f3ebd0fd825"
+    },
+    {
+      "path": "docs/PUBLISHING.md",
+      "bytes": 3741,
+      "sha256": "645042f2eefa0151265a2b3168890a0fdb2bcb8dd142f066272356b841d06f8d"
+    },
+    {
+      "path": "docs/RELEASE-NOTES.md",
+      "bytes": 921,
+      "sha256": "733d042a49610cab7be467faad7232c29c5d598a47665d662dbaf1f7b2c3bb48"
+    },
+    {
       "path": "gemini-extension.json",
       "bytes": 477,
-      "sha256": "7a566a3ac101dad83c1a9dec15ddab1cb0f522691cb1440ffae2ed9f9590ee0e"
+      "sha256": "32b3d58526c7d741ccc8822eeaa59161934ff94d78804ef53bb7feb87045de19"
     },
     {
       "path": "GEMINI.md",
@@ -89,13 +109,13 @@
     },
     {
       "path": "package.json",
-      "bytes": 703,
-      "sha256": "58b1bd8bd86cd87eaa514970c10356897707c0495f42c18c11c14cbaa8887531"
+      "bytes": 979,
+      "sha256": "6faa13dcffc8cabd2a19dcb2d91165c6302a6812f45aac9cdb88cbd6c2b9b167"
     },
     {
       "path": "plugins/aylento/.codex-plugin/plugin.json",
       "bytes": 1289,
-      "sha256": "9339afd030987d248ba4f8618a72aac6726ebb6d0ac244a00c4e391235560946"
+      "sha256": "bbabe45b1c98543091eef776fbf906fbef9ee8a4caeab169f736f0536b0193d4"
     },
     {
       "path": "plugins/aylento/.mcp.json",
@@ -115,7 +135,7 @@
     {
       "path": "plugins/aylento/README.md",
       "bytes": 716,
-      "sha256": "81980830e3e051cee74450428614ce4b7103a3ddabf2b54a3681113f05b227a1"
+      "sha256": "7cf914aa27327cd9a03f68f49b35a784d1f5a45dcb70b49ab711105d75cdefc9"
     },
     {
       "path": "plugins/aylento/scripts/doctor.mjs",
@@ -139,13 +159,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7567,
-      "sha256": "fba6b9ca623b0a1434a818f9a06bb464fc135dfe57d93a15a58966c35efc34e5"
+      "bytes": 7662,
+      "sha256": "b7069d4c2ace234956d268d225a50cff5742fa8bc7e11e2f0df23be38bdde978"
     },
     {
       "path": "RELEASE-STATUS.json",
-      "bytes": 355,
-      "sha256": "944b01af3601882a928b8900bb40b8ea3b313168bbac24931366233bde9ee7d5"
+      "bytes": 392,
+      "sha256": "4e9b1b9a5d153f9fd71c0bbd638a25b0c767dcdbea9e32ad43d91d780d127a58"
     },
     {
       "path": "scripts/configure.mjs",
@@ -158,19 +178,34 @@
       "sha256": "80716f7f37d599d919d0fed3e142e78a19190b24fcdfab1ea7b83a31a1bc3635"
     },
     {
+      "path": "scripts/prepare-release.mjs",
+      "bytes": 4283,
+      "sha256": "6d4edc2228d85fc4fb9290e05d25f40f9ba334afb923d766b40640f8a11a5868"
+    },
+    {
+      "path": "scripts/publish-npm.mjs",
+      "bytes": 1801,
+      "sha256": "cad8b6fd341dde7f38902d0705e789cabec01c78fadc9730e5a3bb7af797f952"
+    },
+    {
       "path": "scripts/server.mjs",
       "bytes": 1452717,
       "sha256": "022716b1482509213085ed432b7da6f17d30ace2aae39ca5ea81ae330fe35b84"
     },
     {
       "path": "scripts/smoke.mjs",
-      "bytes": 3028,
-      "sha256": "a1600f42dbf496e946d62b8b2741d19f9cf04fceab39952ff6186e068643449c"
+      "bytes": 3222,
+      "sha256": "3a3ccfbf48c07086f714047b38a8529d11dcc7da9e961f1bbe7be32e78e4ef8e"
     },
     {
       "path": "scripts/verify-package.mjs",
       "bytes": 1586,
       "sha256": "930ca5c634a4b6942dc4a0d15943893894f25bf4d0c475e22d6f952ac2f92270"
+    },
+    {
+      "path": "server.json",
+      "bytes": 911,
+      "sha256": "0ff38db82a02b11a2894364e3823502c2f40df0b930757ac4cdffcb20026e8bf"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -185,7 +220,7 @@
     {
       "path": "安装指南.md",
       "bytes": 3560,
-      "sha256": "2a385f208a7f6e93d8c83045f3c4ae1cc67fd7f09e0d1760dac88b1a4979fb48"
+      "sha256": "5c9c481340d8f4de92a52889280d12182c749c7a73d26f03ac342cef1b95cec8"
     }
   ],
   "excluded": [

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.popularzb/aylento",
+  "description": "AYLENTO Agent identity and messaging. Local stdio client; requires account and user-approved pairing.",
+  "repository": {
+    "url": "https://github.com/popularzb/aylento-plugins",
+    "source": "github"
+  },
+  "version": "0.13.0-beta.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "aylento-client",
+      "version": "0.13.0-beta.2",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "AYLENTO_PROFILE",
+          "description": "A distinct local profile for this MCP host; use separate Agent Chats across hosts.",
+          "format": "string",
+          "default": "generic",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

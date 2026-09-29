@@ -1,6 +1,18 @@
 {
   "name": "aylento-client",
-  "version": "0.13.0-beta.1",
+  "version": "0.13.0-beta.2",
+  "mcpName": "io.github.popularzb/aylento",
+  "aylentoRuntimeVersion": "0.13.0-beta.1",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "aylento",
+    "agent",
+    "messaging"
+  ],
+  "bugs": {
+    "url": "https://github.com/popularzb/aylento-plugins/issues"
+  },
   "private": true,
   "type": "module",
   "description": "AYLENTO local MCP client for cross-host Agent communication",
