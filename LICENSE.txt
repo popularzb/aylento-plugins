@@ -1,4 +1,63 @@
-AYLENTO — internal review artifact.
-All rights reserved. No public redistribution or open-source license is granted by this package.
-A release license must be selected and approved before public distribution.
-Bundled third-party code retains the licenses in THIRD_PARTY_NOTICES.md.
+AYLENTO 客户端使用许可 / AYLENTO Client Use License
+版本 / Version: 1.0 — 2026-09-29
+Copyright (c) 2026 AYLENTO 著作权人 / AYLENTO copyright holders.
+保留所有权利。All rights reserved.
+
+1. 许可范围
+本许可适用于随包提供的 AYLENTO 自有客户端程序、插件清单、技能和文档。
+著作权人授予您非独占的使用许可：从官方发布渠道下载，在您拥有或管理的设备上
+安装、配置和运行本客户端，以使用 AYLENTO 服务；为上述使用制作必要副本和备份。
+个人使用和组织内部使用均可。为连接宿主客户端，您可以修改本机配置中的路径、
+profile 和服务地址。请保留著作权声明、许可和第三方依赖声明。
+
+2. 保留的权利
+本客户端未按 MIT 或其他开源许可证授权。除上述本机配置及必要安装使用外，
+未经著作权人另行书面许可，本许可不授予修改程序、制作衍生产品、重新包装、
+对外再分发、转售或再许可 AYLENTO 自有部分的权利。您可以分享官方仓库和
+官方下载页面的链接。软件可被查看或下载，不代表上述额外权利已获授予。
+
+3. 第三方组件、平台条款与法定权利
+第三方组件分别受 THIRD_PARTY_NOTICES.md 所列许可约束；本许可不限制那些许可
+已经授予的权利。本许可也不排除适用法律所保留的权利，或官方发布平台条款
+已经授予的权利，包括 GitHub 平台规则允许的查看和站内 fork。
+
+4. 服务与标识
+本许可不转让 AYLENTO 的著作权或商标权，也不授权冒充官方发行。
+客户端使用许可不授予访问他人账号、绕过服务授权或取得服务器代码的权利。
+服务使用仍受其适用条款和账号权限约束。
+
+5. 按现状提供
+在适用法律允许的范围内，本客户端按现状提供，不附带额外保证；本条款不排除
+适用法律不允许排除的保证或责任。
+
+English translation (the Chinese text governs if translations differ):
+
+1. Scope. This license covers the AYLENTO-owned client software, plugin manifests,
+skills and documentation supplied with this distribution. The copyright holders
+grant a non-exclusive license to download from official channels, install,
+configure and run the client on devices you own or administer to use AYLENTO,
+and make copies and backups necessary for that use. Personal and internal
+organizational use are permitted. Local host configuration, including paths,
+profiles and service addresses, may be adjusted. Retain copyright, license and
+third-party notices.
+
+2. Reserved rights. This is not an MIT or other open-source license. Beyond the
+local configuration and installation/use described above, this license does not
+grant rights to modify the program, create derivative products, repackage,
+redistribute externally, resell or sublicense AYLENTO-owned portions without
+separate written permission. You may share links to official repositories and
+download pages. Public availability does not grant these additional rights.
+
+3. Exceptions. Third-party components remain governed by their own licenses in
+THIRD_PARTY_NOTICES.md. Their permissions, rights reserved by applicable law,
+and rights already granted under official distribution-platform terms, including
+viewing and in-platform forking allowed by GitHub, are unaffected.
+
+4. Service and branding. No copyright ownership or trademark rights are
+transferred, and impersonating an official release is not authorized. This
+license grants no access to other accounts, bypass of service authorization or
+rights to server code. Applicable service terms and account permissions apply.
+
+5. As-is. To the extent permitted by applicable law, the client is provided as-is
+without additional warranties. Non-excludable warranties and liabilities remain
+unaffected.

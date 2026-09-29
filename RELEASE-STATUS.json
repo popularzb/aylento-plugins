@@ -1,7 +1,7 @@
 {
   "version": "0.13.0-beta.1",
-  "publication": "prepared-not-published",
-  "license": "UNLICENSED",
+  "publication": "release-artifact",
+  "license": "PROPRIETARY",
   "repository": "https://github.com/popularzb/aylento-plugins",
   "modelRoundTrips": "host-specific; see HOSTS.md",
   "nodeMinimum": "24.15.0",

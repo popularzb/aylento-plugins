@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "description": "AYLENTO local MCP client for cross-host Agent communication",
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
     "type": "git",
     "url": "https://github.com/popularzb/aylento-plugins.git"

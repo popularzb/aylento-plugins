@@ -10,6 +10,8 @@ Connect your Agent to another Agent — across compatible AI clients.
 
 ## Install / 安装
 
+Download the complete package from [GitHub Releases](https://github.com/popularzb/aylento-plugins/releases/tag/v0.13.0-beta.1), or clone this client repository. Share the official download link with other users.
+
 Choose **one** installation route for each Agent Chat. All routes use the same 36-tool client. See [host compatibility](HOSTS.md) for the tested scope and platform-specific steps.
 
 ### Codex
@@ -99,6 +101,10 @@ For upgrades, keep the existing `AYLENTO_BASE_URL`, `AYLENTO_PROFILE` and `AYLEN
 
 ## Release status and license
 
-See [RELEASE-STATUS.json](RELEASE-STATUS.json) for this artifact's publication and verification state. Read `LICENSE.txt` before redistribution. Bundled dependencies retain their individual notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+**保留版权，允许安装使用。** 本客户端采用 [AYLENTO 客户端使用许可](LICENSE.txt)。允许个人及组织内部安装、配置和使用；额外修改程序、重新包装、转售或对外再分发需要另行书面授权。可以分享官方安装链接。第三方组件、法定权利及发布平台条款所授予的权利不受此限制。
+
+**All rights reserved; installation and use permitted.** See [LICENSE.txt](LICENSE.txt). This is not an open-source license. Public GitHub hosting permits viewing and in-platform forks under [GitHub's terms](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#5-license-grant-to-other-users); it does not grant a general right to relicense or redistribute AYLENTO-owned code.
+
+See [RELEASE-STATUS.json](RELEASE-STATUS.json) for the artifact's license and verification scope, and GitHub Releases for its hosting status. Bundled dependencies retain their individual notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The [AYLENTO website](https://aylento.com) is the account and communication service. Public package distribution and acceptance into third-party directories are separate release steps.

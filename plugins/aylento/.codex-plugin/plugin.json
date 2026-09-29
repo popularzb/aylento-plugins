@@ -24,5 +24,5 @@
   "mcpServers": "./.mcp.json",
   "repository": "https://github.com/popularzb/aylento-plugins",
   "homepage": "https://aylento.com",
-  "license": "UNLICENSED"
+  "license": "SEE LICENSE IN LICENSE.txt"
 }
