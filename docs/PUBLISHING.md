@@ -4,14 +4,14 @@ AYLENTO retains copyright. The complete private project is maintained separately
 
 ## Automatic GitHub releases
 
-Changes pushed to `main` run inventory, isolated MCP and package checks. A version tag such as `v0.13.0-beta.4` additionally creates a GitHub download release. The tag must match package.json. Failed validation stops publication. Existing release assets are not overwritten. A prerelease version remains marked as a prerelease.
+Changes pushed to `main` run inventory, isolated MCP and package checks. A version tag such as `v0.13.0-beta.5` additionally creates a GitHub download release. The tag must match package.json. Failed validation stops publication. Existing release assets are verified and are not overwritten. A prerelease version remains marked as a prerelease.
 
-The client distribution version is 0.13.0-beta.4; its bundled MCP runtime is 0.13.0-beta.1. Client-only packaging changes do not require redeploying the account service.
+The client distribution version is 0.13.0-beta.5; its bundled MCP runtime is 0.13.0-beta.1. Client-only packaging changes do not require redeploying the account service.
 
 ## One-time npm setup
 
 1. Sign in to the publisher's npm account, verify email and complete npm's required authentication.
-2. Build the release outside the checkout with `node scripts/prepare-release.mjs /absolute/path/to/new-release v0.13.0-beta.4`.
+2. Build the release outside the checkout with `node scripts/prepare-release.mjs /absolute/path/to/new-release v0.13.0-beta.5`.
 3. Verify its staged package with `node /absolute/path/to/new-release/npm/scripts/verify-package.mjs` and `node /absolute/path/to/new-release/npm/scripts/smoke.mjs`.
 4. Publish the first archive using `node scripts/publish-npm.mjs /absolute/path/to/new-release`. This needs the publisher's npm login and any npm-requested verification. A web login alone does not sign in the terminal.
 5. In the package's npm settings, configure GitHub trusted publishing for owner `popularzb`, repository `aylento-plugins`, workflow `publish.yml`, allowing direct publishing if unattended publication is wanted. This grants that workflow permission to publish this package.
@@ -21,9 +21,15 @@ No npm access token is placed in the public repository. npm OIDC trusted publish
 
 ## Official MCP Registry
 
-`server.json` points to the exact npm package version and the package's `mcpName`. Once npm publishing is configured, set repository variable `MCP_REGISTRY_PUBLISH` to `enabled`. Tagged releases then authenticate using GitHub OIDC and publish the metadata. The Registry hosts discovery metadata; the underlying package must already exist on npm.
+Version tags build an MCPB, include it in `SHA256SUMS`, and upload it plus generated `server.json` to GitHub Releases. The metadata contains the exact MCPB URL and SHA-256. A clean isolated MCPB startup check must pass first.
 
-The workflow gates these external channels until setup is complete. Disabled channels are explicitly reported; a green GitHub release alone does not mean those channels are published.
+Set repository variable `MCP_REGISTRY_PUBLISH` to `enabled` to publish **after** the GitHub download has been verified. The workflow authenticates with GitHub OIDC using a short-lived runner identity. No personal GitHub token, local Registry login file or Smithery key is copied into GitHub. This channel does not depend on npm publication. The final check anonymously retrieves the published version and compares its package URL, hash and active status.
+
+The root `npm-server.json` is only metadata for the optional npm package; the staged npm archive still includes it as `server.json`. Official MCPB publication uses the separately generated release `server.json`. Do not publish the optional npm metadata before the npm package exists.
+
+A retry never replaces release assets: it verifies every asset against the current deterministic build before continuing. An existing Registry version must match. If verification fails, correct the problem and publish a new version rather than reusing different contents under an existing version.
+
+普通 `main` 推送只执行检查；推送与 package.json 匹配的新版本标签，才会发布 GitHub 安装包，并在开关启用时同步官方 MCP Registry。不会自动更新用户电脑上的插件，也不会替代其他平台审核。
 
 ## Directory and end-user updates
 
@@ -36,3 +42,5 @@ Anthropic and other reviewed directories may also require separate review or met
 Preserve the user's base URL, profile, state directory and authorization. Never clear history or re-pair a valid identity merely to update code.
 
 References: [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), [MCP GitHub Actions](https://modelcontextprotocol.io/registry/github-actions), [Gemini releases](https://geminicli.com/docs/extensions/releasing/).
+
+ModelScope and Smithery already provide official AYLENTO distribution entries. Their metadata/package updates remain separate from this workflow. WorkBuddy and MCPFly submissions remain subject to platform review.

@@ -2,15 +2,15 @@
 
 连接不同 AI 客户端中的 Agent：搜索兔子 ID、收发私聊和群聊、发送用户授权的图片文件、管理关注与黑名单。模型仍运行在 WorkBuddy 中，艾伦兔提供身份目录与消息转递。
 
-Connector 0.13.0-beta.4 · MCP runtime 0.13.0-beta.1 · 36 tools.
+Connector 0.13.0-beta.5 · MCP runtime 0.13.0-beta.1 · 36 tools.
 
 ## 安装与首次使用
 
 本目录遵循 WorkBuddy 的 MCP + Skill 连接器格式，需要 WorkBuddy 5.0.0 或更新版本。`mcp.json` 声明 Node.js 24.15.0，由支持该字段的 WorkBuddy 准备运行环境。`npx` 从官方 GitHub Release 下载固定版本的独立客户端，无需 npm 发布账号或 npm 注册表中的同名包；首次下载需要访问 GitHub 及其 Release 下载域名。已有缓存可重复使用。
 
-发布者提交 `aylento-workbuddy-0.13.0-beta.4.zip` 到 WorkBuddy 开放平台审核。该文件是提交用的连接器目录包；不宣称所有 WorkBuddy 版本都提供 ZIP 导入按钮。当前尚未获得市场审核通过，也未完成 WorkBuddy 应用内实际安装或模型收发验收。
+发布者提交 `aylento-workbuddy-0.13.0-beta.5.zip` 到 WorkBuddy 开放平台审核。该文件是提交用的连接器目录包；不宣称所有 WorkBuddy 版本都提供 ZIP 导入按钮。当前尚未获得市场审核通过，也未完成 WorkBuddy 应用内实际安装或模型收发验收。
 
-在市场正式上架前，可以下载完整的 `aylento-plugins-0.13.0-beta.4.zip`，解压并执行 `node scripts/configure.mjs workbuddy`，把输出合并到 WorkBuddy 的自定义 MCP 设置。该手动路径需要自行安装 Node.js 24.15.0+。按宿主支持的 Skill 安装方式加载 `skills/aylento/SKILL.md`，不要重复启用两个相同身份的 MCP 入口。
+在市场正式上架前，可以下载完整的 `aylento-plugins-0.13.0-beta.5.zip`，解压并执行 `node scripts/configure.mjs workbuddy`，把输出合并到 WorkBuddy 的自定义 MCP 设置。该手动路径需要自行安装 Node.js 24.15.0+。按宿主支持的 Skill 安装方式加载 `skills/aylento/SKILL.md`，不要重复启用两个相同身份的 MCP 入口。
 
 1. 在 https://aylento.com 注册并创建一个供 WorkBuddy 使用的 Agent Chat。普通注册无需邀请码。
 2. 在 WorkBuddy 中说：“查看我的艾伦兔连接状态，未连接才开始配对。”

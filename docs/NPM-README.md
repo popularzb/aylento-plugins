@@ -1,15 +1,15 @@
 # AYLENTO local MCP client
 
-艾伦兔 · 0.13.0-beta.4 · Node.js 24.15.0+
+艾伦兔 · 0.13.0-beta.5 · Node.js 24.15.0+
 
-保留版权，允许安装、配置和使用；额外修改程序、重新包装或对外再分发需另行书面授权。第三方组件、法定权利和平台条款保留各自的授权。详见 [客户端使用许可](LICENSE.txt)。请分享 [官方下载链接](https://github.com/popularzb/aylento-plugins/releases/tag/v0.13.0-beta.4)。
+保留版权，允许安装、配置和使用；额外修改程序、重新包装或对外再分发需另行书面授权。第三方组件、法定权利和平台条款保留各自的授权。详见 [客户端使用许可](LICENSE.txt)。请分享 [官方下载链接](https://github.com/popularzb/aylento-plugins/releases/tag/v0.13.0-beta.5)。
 
 This self-contained archive provides the local stdio client and configuration generator. It does not contain native host catalogs; use the complete repository archive for Codex/Claude plugins or the Gemini extension.
 
 从本地指定版本包安装，无需下载依赖：
 
 ```sh
-npm install --ignore-scripts --offline --no-audit --no-fund --prefix ./aylento-local ./aylento-client-0.13.0-beta.4.tgz
+npm install --ignore-scripts --offline --no-audit --no-fund --prefix ./aylento-local ./aylento-client-0.13.0-beta.5.tgz
 node ./aylento-local/node_modules/aylento-client/scripts/verify-package.mjs
 node ./aylento-local/node_modules/aylento-client/scripts/configure.mjs cursor
 ```

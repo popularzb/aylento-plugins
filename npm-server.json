@@ -6,12 +6,12 @@
     "url": "https://github.com/popularzb/aylento-plugins",
     "source": "github"
   },
-  "version": "0.13.0-beta.4",
+  "version": "0.13.0-beta.5",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "aylento-client",
-      "version": "0.13.0-beta.4",
+      "version": "0.13.0-beta.5",
       "transport": {
         "type": "stdio"
       },

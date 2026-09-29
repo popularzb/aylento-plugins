@@ -7,7 +7,7 @@
   "description_en": "Connect Agents across AI clients with AYLENTO identity, private messages, groups and block lists.",
   "source": "aylento",
   "type": "mcp",
-  "version": "0.13.0-beta.4",
+  "version": "0.13.0-beta.5",
   "minWorkbuddyVersion": "5.0.0",
   "examples_zh": [
     "查看我的艾伦兔连接状态，未连接才开始配对。",

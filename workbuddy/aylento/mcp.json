@@ -6,7 +6,7 @@
       "args": [
         "--yes",
         "--ignore-scripts",
-        "--package=https://github.com/popularzb/aylento-plugins/releases/download/v0.13.0-beta.4/aylento-client-0.13.0-beta.4.tgz",
+        "--package=https://github.com/popularzb/aylento-plugins/releases/download/v0.13.0-beta.5/aylento-client-0.13.0-beta.5.tgz",
         "--",
         "aylento-client"
       ],

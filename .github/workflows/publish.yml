@@ -28,6 +28,7 @@ jobs:
           node scripts/prepare-release.mjs "$RUNNER_TEMP/aylento-verify"
           node "$RUNNER_TEMP/aylento-verify/npm/scripts/verify-package.mjs"
           node "$RUNNER_TEMP/aylento-verify/npm/scripts/smoke.mjs"
+          node scripts/smoke.mjs --mcpb "$RUNNER_TEMP/aylento-verify/mcpb/bundle"
           node scripts/smoke.mjs --workbuddy "$RUNNER_TEMP/aylento-verify/aylento-client-$(node -p 'require("./package.json").version').tgz"
   publish:
     if: github.repository == 'popularzb/aylento-plugins' && startsWith(github.ref, 'refs/tags/v')
@@ -50,30 +51,36 @@ jobs:
       - name: Publish npm using its configured trusted publisher
         if: vars.NPM_TRUSTED_PUBLISHING == 'enabled'
         run: node scripts/publish-npm.mjs "$RUNNER_TEMP/aylento-release"
-      - name: Publish MCP Registry using GitHub OIDC
-        if: vars.NPM_TRUSTED_PUBLISHING == 'enabled' && vars.MCP_REGISTRY_PUBLISH == 'enabled'
-        run: |
-          curl --fail --location --output "$RUNNER_TEMP/mcp-publisher.tar.gz" https://github.com/modelcontextprotocol/registry/releases/download/v1.8.1/mcp-publisher_linux_amd64.tar.gz
-          printf '%s  %s\n' a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc "$RUNNER_TEMP/mcp-publisher.tar.gz" | sha256sum --check -
-          mkdir "$RUNNER_TEMP/mcp-publisher"
-          tar -xzf "$RUNNER_TEMP/mcp-publisher.tar.gz" -C "$RUNNER_TEMP/mcp-publisher"
-          "$RUNNER_TEMP/mcp-publisher/mcp-publisher" login github-oidc
-          "$RUNNER_TEMP/mcp-publisher/mcp-publisher" publish --file server.json
       - name: Publish GitHub download packages
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo 'A release already exists; refusing to replace published assets.' >&2
-            exit 1
-          fi
-          if [[ "$RELEASE_TAG" == *-* ]]; then
-            release_flags=(--prerelease)
+            echo 'Release exists; verify exact assets before continuing.'
           else
-            release_flags=(--latest)
+            if [[ "$RELEASE_TAG" == *-* ]]; then
+              release_flags=(--prerelease)
+            else
+              release_flags=(--latest)
+            fi
+            gh release create "$RELEASE_TAG" "$RUNNER_TEMP/aylento-release/"*.zip "$RUNNER_TEMP/aylento-release/"*.tgz "$RUNNER_TEMP/aylento-release/"*.mcpb "$RUNNER_TEMP/aylento-release/server.json" "$RUNNER_TEMP/aylento-release/SHA256SUMS" --repo "$GITHUB_REPOSITORY" --verify-tag --title "AYLENTO $RELEASE_TAG" --notes-file "$RUNNER_TEMP/aylento-release/RELEASE-NOTES.md" "${release_flags[@]}"
           fi
-          gh release create "$RELEASE_TAG" "$RUNNER_TEMP/aylento-release/"*.zip "$RUNNER_TEMP/aylento-release/"*.tgz "$RUNNER_TEMP/aylento-release/SHA256SUMS" --repo "$GITHUB_REPOSITORY" --verify-tag --title "AYLENTO $RELEASE_TAG" --notes-file "$RUNNER_TEMP/aylento-release/RELEASE-NOTES.md" "${release_flags[@]}"
+          node scripts/verify-publication.mjs "$RUNNER_TEMP/aylento-release" github
+      - name: Publish MCP Registry using GitHub OIDC
+        if: vars.MCP_REGISTRY_PUBLISH == 'enabled'
+        run: |
+          curl --fail --location --output "$RUNNER_TEMP/mcp-publisher.tar.gz" https://github.com/modelcontextprotocol/registry/releases/download/v1.8.1/mcp-publisher_linux_amd64.tar.gz
+          printf '%s  %s\n' a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc "$RUNNER_TEMP/mcp-publisher.tar.gz" | sha256sum --check -
+          mkdir "$RUNNER_TEMP/mcp-publisher"
+          tar -xzf "$RUNNER_TEMP/mcp-publisher.tar.gz" -C "$RUNNER_TEMP/mcp-publisher"
+          "$RUNNER_TEMP/mcp-publisher/mcp-publisher" login github-oidc
+          if node scripts/verify-publication.mjs "$RUNNER_TEMP/aylento-release" registry; then
+            echo "Matching Registry version already published."
+          else
+            (cd "$RUNNER_TEMP/aylento-release" && "$RUNNER_TEMP/mcp-publisher/mcp-publisher" publish)
+          fi
+          node scripts/verify-publication.mjs "$RUNNER_TEMP/aylento-release" registry
       - name: Report configured publication channels
         env:
           NPM_ENABLED: ${{ vars.NPM_TRUSTED_PUBLISHING }}

@@ -32,6 +32,6 @@ Reviewed 2026-09-29. Platform capabilities can change; release evidence describe
 
 ## Further channels
 
-GitHub repository/Releases and our own catalogs are the initial sharing routes. npm and the MCP Registry need separate package publication and ownership verification. WorkBuddy's marketplace needs its own connector metadata, runtime and authorization acceptance. Claude Desktop's one-click extension route needs a validated MCPB runtime. None are automatically published by uploading this repository.
+GitHub version tags build native client archives and a standard MCPB. The configured workflow publishes the official MCP Registry using the MCPB, independently of npm. WorkBuddy and other reviewed marketplaces still require their own review or updates. MCPB hosts must supply Node.js 24.15.0 or newer; the runtime is not bundled. Normal Git pushes and directory listing do not update installed clients.
 
 ChatGPT/Gemini cloud connections require remote MCP plus appropriate authentication and a defined destination for durable message history. This local client must not ACK messages merely because an ephemeral cloud model saw them. Cloud support is a separate implementation, not a replacement URL in these files.
