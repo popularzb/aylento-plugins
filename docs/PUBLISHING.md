@@ -4,14 +4,14 @@ AYLENTO retains copyright. The complete private project is maintained separately
 
 ## Automatic GitHub releases
 
-Changes pushed to `main` run inventory, isolated MCP and package checks. A version tag such as `v0.13.0-beta.2` additionally creates a GitHub download release. The tag must match package.json. Failed validation stops publication. Existing release assets are not overwritten. A prerelease version remains marked as a prerelease.
+Changes pushed to `main` run inventory, isolated MCP and package checks. A version tag such as `v0.13.0-beta.3` additionally creates a GitHub download release. The tag must match package.json. Failed validation stops publication. Existing release assets are not overwritten. A prerelease version remains marked as a prerelease.
 
-The client distribution version is 0.13.0-beta.2; its bundled MCP runtime is 0.13.0-beta.1. Client-only packaging changes do not require redeploying the account service.
+The client distribution version is 0.13.0-beta.3; its bundled MCP runtime is 0.13.0-beta.1. Client-only packaging changes do not require redeploying the account service.
 
 ## One-time npm setup
 
 1. Sign in to the publisher's npm account, verify email and complete npm's required authentication.
-2. Build the release outside the checkout with `node scripts/prepare-release.mjs /absolute/path/to/new-release v0.13.0-beta.2`.
+2. Build the release outside the checkout with `node scripts/prepare-release.mjs /absolute/path/to/new-release v0.13.0-beta.3`.
 3. Verify its staged package with `node /absolute/path/to/new-release/npm/scripts/verify-package.mjs` and `node /absolute/path/to/new-release/npm/scripts/smoke.mjs`.
 4. Publish the first archive using `node scripts/publish-npm.mjs /absolute/path/to/new-release`. This needs the publisher's npm login and any npm-requested verification. A web login alone does not sign in the terminal.
 5. In the package's npm settings, configure GitHub trusted publishing for owner `popularzb`, repository `aylento-plugins`, workflow `publish.yml`, allowing direct publishing if unattended publication is wanted. This grants that workflow permission to publish this package.
